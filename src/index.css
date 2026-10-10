@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply text-stone-900 antialiased selection:bg-amber-400/40 selection:text-amber-950;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f0f9ff;
+    min-height: 100vh;
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+.font-story {
+  font-family: 'Lora', Georgia, serif;
+}
+
+.font-vietnam {
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* Custom subtle bright fantasy scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.85);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(217, 119, 6, 0.65) 0%, rgba(245, 158, 11, 0.5) 100%);
+  border-radius: 9999px;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(180, 83, 9, 0.9) 0%, rgba(217, 119, 6, 0.8) 100%);
+}
+
+@keyframes turnFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-turn-in {
+  animation: turnFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Arcane Rune Pulse Glow for bright mode */
+@keyframes runePulseLight {
+  0%, 100% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 6px rgba(217, 119, 6, 0.3));
+  }
+  50% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.6));
+  }
+}
+
+.animate-rune-glow {
+  animation: runePulseLight 3s ease-in-out infinite;
+}
+
+/* Floating Mana Mote particle animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-14px) translateX(8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Bright Fantasy Pearlescent Glass Panels */
+.fantasy-panel-bright {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(254, 252, 232, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  box-shadow: 0 10px 30px -5px rgba(217, 119, 6, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.fantasy-panel-bright-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fantasy-panel-bright-hover:hover {
+  border-color: rgba(217, 119, 6, 0.65);
+  box-shadow: 0 14px 35px -5px rgba(217, 119, 6, 0.2), 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Combat Screen Shake */
+@keyframes combatImpactShake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-4px, 2px) rotate(-0.5deg); }
+  30% { transform: translate(4px, -3px) rotate(0.5deg); }
+  45% { transform: translate(-3px, -2px) rotate(-0.25deg); }
+  60% { transform: translate(3px, 2px) rotate(0.25deg); }
+  75% { transform: translate(-1px, 1px) rotate(0deg); }
+}
+
+.animate-combat-shake {
+  animation: combatImpactShake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Metallic Card Sheen Animation */
+@keyframes cardSheen {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  50%, 100% { transform: translateX(200%) skewX(-20deg); }
+}
+
+.card-sheen-effect {
+  position: relative;
+  overflow: hidden;
+}
+.card-sheen-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  pointer-events: none;
+  animation: cardSheen 5s ease-in-out infinite;
+}
+
+/* Demon Eye Mystic Cyan Pulse */
+@keyframes demonEyePulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.4), inset 0 0 6px rgba(6, 182, 212, 0.6);
+    filter: drop-shadow(0 0 4px #06b6d4);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(6, 182, 212, 0.85), inset 0 0 10px rgba(34, 211, 238, 0.95);
+    filter: drop-shadow(0 0 10px #22d3ee);
+  }
+}
+
+.animate-demon-eye {
+  animation: demonEyePulse 2.2s ease-in-out infinite;
+}
+
+/* Luminous Mana Halo */
+@keyframes manaAuraBreath {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.25), 0 0 24px rgba(217, 119, 6, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.5), 0 0 35px rgba(245, 158, 11, 0.3);
+  }
+}
+
+.animate-mana-aura {
+  animation: manaAuraBreath 3.5s ease-in-out infinite;
+}
+
+/* Tactile Button Press */
+.btn-tactile {
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s ease;
+}
+.btn-tactile:active:not(:disabled) {
+  transform: scale(0.97) translateY(1px);
+}

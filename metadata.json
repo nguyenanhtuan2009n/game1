@@ -1,0 +1,6 @@
+{
+  "name": "Mushoku Tensei: Six-Faced World RPG",
+  "description": "Game Master Engine & Text-based Simulator mô phỏng thế giới Thất Nghiệp Chuyển Sinh với hệ thống Mana, Đấu Khí, Niệm chú và Sinh tồn.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
